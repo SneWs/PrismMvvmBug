@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+             mc:Ignorable="d"
+             x:Class="PrismHotReloadBug.App">
+    <Application.Resources>
+
+        <!-- Colors -->
+        <Color x:Key="PageBackgroundColor">#FFFFFFBB</Color>
+        <Color x:Key="PageForegroundColor">#FF333333</Color>
+        <Color x:Key="WarningColor">#FFFF00CC</Color>
+        <Color x:Key="SuccessColor">#FF00FFCC</Color>
+        
+        <!-- Default styles -->
+
+        <Style TargetType="Label" x:Key="BigText">
+            <Setter Property="TextColor" Value="{DynamicResource SuccessColor}" />
+            
+            <!-- NOTE: Change the font size for example and save, hot reload will then stop 
+                       working and the view will fall back to a non styles state. -->
+            <Setter Property="FontSize" Value="32" />
+        </Style>
+        
+        
+        <!--  Implicit styles  -->
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+            <Setter Property="Padding" Value="0,14,0,0" />
+        </Style>
+
+        <Style TargetType="Grid">
+            <Setter Property="RowSpacing" Value="0" />
+            <Setter Property="ColumnSpacing" Value="0" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource PageForegroundColor}" />
+        </Style>
+
+    </Application.Resources>
+</prism:PrismApplication>
